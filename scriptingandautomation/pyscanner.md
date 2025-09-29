@@ -1,4 +1,6 @@
 # Port Scanner
+
+'''
 #!/bin/python3
 
 import sys
@@ -39,3 +41,4 @@ sys.exit()
 except socket.error:
 print("Could not connect to server.")
 sys.exit()
+'''
