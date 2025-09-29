@@ -1,0 +1,80 @@
+# Incident Response
+
+## Command line commands
+
+ipconfig /all :  network configuration information, assigned IP address and the device’s MAC address
+tasklist : running processes and programs
+wmic process get description, executablepath : display running processes and the associated binary file that was executed to create the process
+net user : print a list of all system users to the terminal
+net localgroup administrators : This command will list all users that are in the administrators user group
+net localgroup : see groups, to search users in a group if the group has spaces it needs to be : net localgroup "Remote Desktop Users"
+sc query | more : list all services and detailed information about each one
+netstat -ab : list open ports on a system
+
+## Powershell Commands
+
+Get-NetIPConfiguration and Get-NetIPAddress : get network-related information
+Get-LocalUser : list all users on system
+Get-LocalUser -Name BTLO | select * : provide a specific user to the command to only get information about them
+Get-Service | Where Status -eq "Running" | Out-GridView : quickly identify running services on the system, show in grid view
+Get-Process | Format-Table -View priority : group running processes by their priority value
+Get-Process -Id 'idhere' | Select * : specific information from a service by including the name in the command (-Name ‘namehere’) or the Id. Piping to Select * provides us with all the properties
+Get-ScheduledTask : list tasks that are set to run after certain conditions are met. Scheduled Tasks used for persistance.
+Get-ScheduledTask -TaskName 'PutANameHere' | Select * : dig deeper by specifying the task we’re interested in, and retrieving all properties for it.
+
+tasklist > tasklist.txt : put tasklist into a text file
+
+## Detection and Analysis
+
+Wireshark 
+
+Filters
+
+tcp.port == 80 displays packets that have a source or destination port of 80
+tcp.window_size_value >= 8000 displays TCP packets with a window size of 8000 bytes or over.
+TCP packets addressed to 192.168.1.7, use ip.dst_host == 192.168.1.7 && tcp
+NTP traffic or UDP traffic from/to port 20000, you can use - ntp or udp.port == 20000
+not (!) operator excludes specific packets from being displayed, such as not ftp
+	
+Following Streams & Custom Columns
+
+analyze an HTTP communication between a web server and a host
+
+right-click on a packet within the stream, and click Follow > TCP/UDP/SSL/HTTP Stream
+	
+Protocol Hierarchy
+
+This window displays the percentages of the number of packets or bytes in a protocol conversation - statistics > protocol hirearchy
+
+Conversations
+
+which hosts have communicated to other hosts, on which ports, and with a total of how many bytes and packets - statistics > conversations
+
+Endpoints
+
+hosts that appear in the capture and the amount of packets/bytes they sent and received - statistics > endpoints
+recieving more than transmitting? big download - transmitting more than receiving? uploading files or backing up
+
+## Containment, Eradication, and Recovery Phase
+
+Sysinternals Process Explorer is a very powerful task manager that can show processes that try to mask themselves as ordinary system processes
+
+To determine the source of suspicious network connections, the netstat utility and Sysinternals’ Process Monitor are an excellent combination
+
+Sysinternals - Rootkit Revealer, is very useful in detecting Rootkits or malware that uses advanced techniques
+
+## DeepBlueCLI 
+
+analyze security data, automate investigations, manage security incidents
+
+administrator-level PowerShell window
+
+Cd to folder, launch program and log with :  .\DeepBlue.ps1 ..\Log1.evtx (the .. takes you back folders, to go forward in folders to file just add the folder names .\folder1\insidefolder1\Log1.evtx)
+
+Windows will block it : Set-ExecutionPolicy Bypass -Scope CurrentUser to fix.
+
+Run again : ./DeepBlue.ps1 ../Log1.evtx
+
+we can tell DeepBlue to point at the local system's Security or System event logs directly : ./DeepBlue.ps1 -log security , ./DeepBlue.ps1 -log system
+
+to export to a text file : ./DeepBlue.ps1 .\evtx\* > output.txt
