@@ -1,7 +1,5 @@
 # Python Basic
 
-# Basic Python
-
 ## Strings
 ```
 print("Goodbye, Pluto")
