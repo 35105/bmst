@@ -2,7 +2,7 @@
 
 ## passwd/shadow
 
-/etc/passwd - Used to keep track of every registered user that has access to a system
+/etc/passwd - Used to keep track of every registered user that has access to a system\
 /etc/shadow - Contains encrypted passwords as well as other information such as account or password expiration values. The /etc/shadow file is readable only by the root account.
 
 ## /Var/Lib and /Var/Log
@@ -11,18 +11,18 @@ var/lib - in Debian /var/lib/dpkg/status shows a list of installed software, cop
 	
 cat status | grep Package > packages.txt - can use this to copy package names to a text file
 
-cat status will read the file.
-grep Package will search for any lines containing ‘Package’
+cat status will read the file.\
+grep Package will search for any lines containing ‘Package’\
 	> packages.txt will output the results to a text file called packages.txt
 	
 ## var/log - os logs
 	
-/var/log/auth.log – Contains system authentication information, including user logins.
-/var/log/dpkg.log – Contains information that is logged when a package is installed or removed using the ‘dpkg’ command.
-/var/log/btmp – This file contains information about failed login attempts.
-/var/log/cron – Whenever the cron daemon starts a cron job, it logs the information about the cron job in this file.
-/var/log/secure – Contains information related to authentication and authorization privileges.
-/var/log/faillog – Contains user failed login attempts.
+/var/log/auth.log – Contains system authentication information, including user logins.\
+/var/log/dpkg.log – Contains information that is logged when a package is installed or removed using the ‘dpkg’ command.\
+/var/log/btmp – This file contains information about failed login attempts.\
+/var/log/cron – Whenever the cron daemon starts a cron job, it logs the information about the cron job in this file.\
+/var/log/secure – Contains information related to authentication and authorization privileges.\
+/var/log/faillog – Contains user failed login attempts.\
 		
 ## web server logs
 	
