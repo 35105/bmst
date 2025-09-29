@@ -56,19 +56,19 @@ Special Logon events are when a user with administrative privileges logs into th
 
 4625 Failed Logon
 
-ERROR CODE	DESCRIPTION
-0xC0000064	The specified user does not exist
-0xC000006A	The value provided as the current password is not correct
-0xC000006C	Password policy not met
-0xC000006D	The attempted logon is invalid due to a bad user name
-0xC000006E	User account restriction has prevented successful login
-0xC000006F	The user account has time restrictions and may not be logged onto at this time
-0xC0000070	The user is restricted and may not log on from the source workstation
-0xC0000071	The user account’s password has expired
-0xC0000072	The user account is currently disabled
-0xC000009A	Insufficient system resources
-0xC0000193	The user’s account has expired
-0xC0000224	User must change his password before he logs on the first time
+ERROR CODE	DESCRIPTION\
+0xC0000064	The specified user does not exist\
+0xC000006A	The value provided as the current password is not correct\
+0xC000006C	Password policy not met\
+0xC000006D	The attempted logon is invalid due to a bad user name\
+0xC000006E	User account restriction has prevented successful login\
+0xC000006F	The user account has time restrictions and may not be logged onto at this time\
+0xC0000070	The user is restricted and may not log on from the source workstation\
+0xC0000071	The user account’s password has expired\
+0xC0000072	The user account is currently disabled\
+0xC000009A	Insufficient system resources\
+0xC0000193	The user’s account has expired\
+0xC0000224	User must change his password before he logs on the first time\
 0xC0000234	The user account has been automatically locked
 	
 4634 Logoff
