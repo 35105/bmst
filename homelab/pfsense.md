@@ -1,5 +1,9 @@
 # pfsense
 
+[Home](https://github.com/35105/bmst/tree/main)\
+\
+[Back](https://github.com/35105/bmst/tree/main/homelab)
+
 ZFS Mirror:<br>
 In setup choose Install pfSense with ZFS for a mirrored setup.
 Select the option to create a ZFS mirror, both drives can be selected<br>
