@@ -1,9 +1,5 @@
 # Windows Investigations
 
-[Home](https://github.com/35105/bmst/tree/main)\
-\
-[Back](https://github.com/35105/bmst/tree/main/digitalforensics)
-
 ## Program artifacts
     
 LNK Files: LNK files in Windows OS serve as shortcuts that link one file to another, allowing users to access applications regardless of their location in the file system. They contain valuable metadata, including the linked folder's location, creation and modification dates, last accessed date, and file size. To view these files in a human-readable format, we can use Windows File Analyzer. C:\Users\$USER$\AppData\Roaming\Microsoft\Windows\Recent
