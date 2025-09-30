@@ -1,5 +1,9 @@
 # Linux Investigations
 
+[Home](https://github.com/35105/bmst/tree/main)\
+\
+[Back](https://github.com/35105/bmst/tree/main/digitalforensics)
+
 ## passwd/shadow
 
 /etc/passwd - Used to keep track of every registered user that has access to a system\
