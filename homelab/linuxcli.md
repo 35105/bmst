@@ -1,4 +1,9 @@
 # Linux CLI
+
+[Home](https://github.com/35105/bmst/tree/main)\
+\
+[Back](https://github.com/35105/bmst/tree/main/homelab)
+
 ### Navigate directory
 **pwd** show current directory\
 **cd** change directory\
