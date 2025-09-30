@@ -1,5 +1,9 @@
 # SMB Share
 
+[Home](https://github.com/35105/bmst/tree/main)\
+\
+[Back](https://github.com/35105/bmst/tree/main/homelab)
+
 Update:
 ```bash
 apt update && apt upgrade -y
